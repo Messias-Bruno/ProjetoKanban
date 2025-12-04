@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Kanban</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../css/style.css'>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Board de tarefas</h1>
+    <button onclick="window.location.href='index.html'">Kanban</button>
+    <button onclick="window.location.href='novo-usuario.html'">Novo Usuário</button>
+    <button onclick="window.location.href='nova-tarefa.html'">Nova Tarefa</button>
+  </div>
+
+  <div class="kanban-board">
+    <div class="column" id="colA">
+      <h3>A Fazer</h3>
+    </div>
+
+    <div class="column" id="colB">
+      <h3>Em Andamento</h3>
+    </div>
+
+    <div class="column" id="colC">
+      <h3>Pronto</h3>
+    </div>
+  </div>
+
+  <!-- MODAL DE EDIÇÃO -->
+<div id="taskModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="closeBtn">&times;</span>
+
+    <h2>Editar Tarefa</h2>
+
+    <div class="campo">
+      <label>Título</label>
+      <input id="modalTitulo" type="text">
+    </div>
+
+    <div class="campo">
+      <label>Responsável</label>
+      <input id="modalResponsavel" type="text">
+    </div>
+
+    <div class="campo">
+      <label>Status</label>
+      <select id="modalStatus">
+        <option>A Fazer</option>
+        <option>Em Andamento</option>
+        <option>Pronto</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Descrição</label>
+      <textarea id="modalDescricao" rows="4"></textarea>
+    </div>
+
+    <button id="btnSalvarEdicao">Salvar Alterações</button>
+    <button id="btnExcluir" style="background:red; color:white; margin-top:10px;">
+  &times;
+</button>
+
+  </div>
+</div>
+
+
+  <script src="../js/index.js"></script>
+  <script>
+    // chama a função que carrega tarefas ao abrir a página
+    if (typeof loadTasks === 'function') {
+      document.addEventListener('DOMContentLoaded', loadTasks);
+    } else {
+      console.error('loadTasks não encontrada. Verifique se js/script.js foi carregado.');
+    }
+  </script>
+</body>
+</html>
