@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nova Tarefa</title> 
+  <link rel="stylesheet" href="/Docs/html/tela Kanban/css/novo.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Board de tarefas</h1>
+    <button onclick="window.location.href='index.html'">Kanban</button>
+    <button onclick="window.location.href='novo-usuario.html'">Novo Usuário</button>
+    <button onclick="window.location.href='nova-tarefa.html'">Nova Tarefa</button>
+  </div>
+
+  <div class="wrapper">
+    <div class="card" aria-label="Card da Tela de Kanban">
+      <div class="linha">
+        <div class="campo" style="width:100%">
+          <div class="label">Título da Tarefa</div>
+          <input id="titulo" type="text" placeholder="Digite o título da tarefa">
+        </div>
+      </div>
+
+      <div class="linha">
+        <div class="campo">
+          <div class="label">ID da tarefa</div>
+          <input id="taskId" type="text" placeholder="ID">
+        </div>
+
+        <div class="campo">
+          <div class="label">Prioridade</div>
+          <select id="prioridade">
+            <option>Normal</option>
+            <option>Baixa</option>
+            <option>Alta</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="linha">
+        <div class="campo">
+          <div class="label">Aberto por</div>
+          <input id="abertoPor" type="text" placeholder="Nome de quem abriu">
+        </div>
+
+        <div class="campo">
+          <div class="label">Responsável atual</div>
+          <select id="responsavel">
+            <option>Selecione...</option>
+            <option>André Torres</option>
+            <option>Maria Souza</option>
+            <option>Carlos Lima</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="linha">
+        <div class="campo">
+          <div class="label">Status</div>
+          <select id="status">
+            <option>Em andamento</option>
+            <option>Pendente</option>
+            <option>Concluída</option>
+            <option>Bloqueada</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="linha">
+        <div class="campo" style="width:100%">
+          <div class="label">Descrição da tarefa</div>
+          <textarea id="descricao" rows="4" placeholder="Descreva a tarefa aqui..." style="width:100%"></textarea>
+        </div>
+      </div>
+
+      <div class="acoes" style="margin-top:20px">
+        <button id="btnAdd" class="btn" type="button">Adicionar Tarefa</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/index.js"></script>
+</body>
+</html>
